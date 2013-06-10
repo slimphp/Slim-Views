@@ -12,54 +12,64 @@ Slim Views only officially support the following views listed below.
 
 ## How to Install
 
-### using [Composer](http://getcomposer.org/)
+#### using [Composer](http://getcomposer.org/)
 
 Create a composer.json file in your project root:
-
+    
+    ```json
     {
         "require": {
             "slim/views": "1.0.*"
         }
     }
+    ```
 
 Then run the following composer command:
 
-    php composer.phar install
+    ```bash
+    $ php composer.phar install
+    ```
 
 
 ## Smarty
 
 ### How to use
-
+    
+    ```php
     <?php
     require 'vendor/autoload.php';
 
     $app = new \Slim\Slim(array(
         'view' => new \Slim\Views\Smarty()
     ));
+    ```
 
 To use Smarty options do the following:
-
+    
+    ```php
     $view = $app->view();
     $view->parserDirectory = dirname(__FILE__) . 'smarty';
     $view->parserCompileDirectory = dirname(__FILE__) . '/compiled';
     $view->parserCacheDirectory = dirname(__FILE__) . '/cache';
     $view->parserExtensions = dirname(__FILE__) . 'vendor/slim/views/Slim/Views/smartyplugins';
-
+    ```
 
 ## Twig
 
 ### How to use
-
+    
+    ```php
     <?php
     require 'vendor/autoload.php';
 
     $app = new \Slim\Slim(array(
         'view' => new \Slim\Views\Twig()
     ));
+    ```
 
 To use Twig options do the following:
-
+    
+    ```php
     $view = $app->view();
     $view->parserOptions = array(
         'debug' => true,
@@ -68,11 +78,12 @@ To use Twig options do the following:
     $view->parserExtensions = array(
         new \Slim\Views\TwigExtension(),
     );
+    ```
 
-
-## Author
+## Authors
 
 [Josh Lockhart](https://github.com/codeguy)
+
 [Andrew Smith](https://github.com/silentworks)
 
 ## License

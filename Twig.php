@@ -119,13 +119,9 @@ class Twig extends \Slim\View
                 $this->parserOptions
             );
 
-            if (class_exists('\Twig_Extensions_Autoloader')) {
-                \Twig_Extensions_Autoloader::register();
-
-                foreach ($this->parserExtensions as $ext) {
-                    $extension = is_object($ext) ? $ext : new $ext;
-                    $this->parserInstance->addExtension($extension);
-                }
+            foreach ($this->parserExtensions as $ext) {
+                $extension = is_object($ext) ? $ext : new $ext;
+                $this->parserInstance->addExtension($extension);
             }
         }
 

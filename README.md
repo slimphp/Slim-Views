@@ -148,7 +148,7 @@ Inside your Smarty template you would write:
 
 #### baseUrl
 
-    __Twig__
+__Twig__
 
 Inside your Twig template you would write:
 

@@ -6,6 +6,8 @@
  * Type:     function
  * Name:     siteUrl
  * Purpose:  outputs url for a function with the defined name method
+ * version   0.1.0
+ * package   SlimViews
  * -------------------------------------------------------------
  */
 function smarty_function_siteUrl($params, $template)

@@ -5,7 +5,7 @@
  * @author      Josh Lockhart
  * @author      Andrew Smith
  * @link        http://www.slimframework.com
- * @copyright   2011 Josh Lockhart
+ * @copyright   2013 Josh Lockhart
  *
  * MIT LICENSE
  *

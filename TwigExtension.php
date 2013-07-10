@@ -5,7 +5,7 @@
  * @author      Josh Lockhart
  * @author      Andrew Smith
  * @link        http://www.slimframework.com
- * @copyright   2011 Josh Lockhart
+ * @copyright   2013 Josh Lockhart
  *
  * MIT LICENSE
  *
@@ -57,7 +57,6 @@ class TwigExtension extends \Twig_Extension
     {
         return $this->base($withUri, $appName) . '/' . ltrim($url, '/');
     }
-
 
     public function base($withUri = true, $appName = 'default')
     {

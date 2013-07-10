@@ -90,7 +90,7 @@ $view->parserExtensions = array(
 
 ```php
 $view->parserExtensions = array(
-    dirname(__FILE__) . '/vendor/slim/views/Slim/Views/smartyplugins',
+    dirname(__FILE__) . '/vendor/slim/views/Slim/Views/SmartyPlugins',
 );
 ```
 
@@ -147,6 +147,18 @@ Inside your Smarty template you would write:
 
 
 #### baseUrl
+
+    __Twig__
+
+Inside your Twig template you would write:
+
+    {{ baseUrl() }}
+
+__Smarty__
+
+Inside your Smarty template you would write:
+
+    {baseUrl}
 
 ## Authors
 

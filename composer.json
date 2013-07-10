@@ -2,7 +2,7 @@
     "name": "slim/views",
     "type": "library",
     "description": "Twig View Parser package for the Slim Framework",
-    "keywords": ["templating", "extensions"],
+    "keywords": ["templating", "extensions", "slimphp"],
     "homepage": "http://github.com/codeguy/Slim-Views",
     "license": "MIT",
     "authors": [

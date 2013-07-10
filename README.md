@@ -19,7 +19,7 @@ Create a composer.json file in your project root:
 ```json
 {
     "require": {
-        "slim/views": "1.0.*"
+        "slim/views": "0.1.*"
     }
 }
 ```

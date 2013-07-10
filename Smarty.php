@@ -96,10 +96,13 @@ class Smarty extends \Slim\View
     public function getInstance()
     {
         if (! ($this->parserInstance instanceof \Smarty)) {
-            if (!is_dir($this->parserDirectory)) {
-                throw new \RuntimeException('Cannot set the Smarty lib directory : ' . $this->parserDirectory . '. Directory does not exist.');
+            if (!class_exists('\Smarty')) {
+                if (!is_dir($this->parserDirectory)) {
+                    throw new \RuntimeException('Cannot set the Smarty lib directory : ' . $this->parserDirectory . '. Directory does not exist.');
+                }
+                require_once $this->parserDirectory . '/Smarty.class.php';
             }
-            require_once $this->parserDirectory . '/Smarty.class.php';
+
             $this->parserInstance = new \Smarty();
             $this->parserInstance->template_dir = $this->getTemplatesDirectory();
             if ($this->parserExtensions) {

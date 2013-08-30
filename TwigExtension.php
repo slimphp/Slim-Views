@@ -47,6 +47,7 @@ class TwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('urlFor', array($this, 'urlFor')),
             new \Twig_SimpleFunction('baseUrl', array($this, 'base')),
             new \Twig_SimpleFunction('siteUrl', array($this, 'site')),
+            new \Twig_SimpleFunction('appendSiteUrl', array($this, 'appendSite'))
         );
     }
 
@@ -58,6 +59,13 @@ class TwigExtension extends \Twig_Extension
     public function site($url, $withUri = true, $appName = 'default')
     {
         return $this->base($withUri, $appName) . '/' . ltrim($url, '/');
+    }
+
+    public function appendSite($url, $append)
+    {
+        $siteUrl = $this->site($url, $withUri = true, $appName = 'default');
+        $forwardSlash = strcmp(substr($siteUrl, -1), '/') ? '/' : '';       
+        return $siteUrl . $forwardSlash . $append;
     }
 
     public function base($withUri = true, $appName = 'default')

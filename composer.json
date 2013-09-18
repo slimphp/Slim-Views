@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "slim/slim": ">=2.2.0",
+        "slim/slim": ">=2.3.0",
         "php": ">=5.3.0"
     },
     "autoload": {

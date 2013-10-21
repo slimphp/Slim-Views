@@ -84,7 +84,7 @@ class Smarty extends \Slim\View
     public function render($template)
     {
         $parser = $this->getInstance();
-        $parser->assign($this->all());
+        $parser->assign($this->getData());
 
         return $parser->fetch($template);
     }

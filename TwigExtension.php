@@ -74,6 +74,10 @@ class TwigExtension extends \Twig_Extension
     
     public function dump($var, $appName = 'default')
     {
-        return var_dump($var);
+        if (Slim::getInstance($appName)->view()->parserOptions['debug']) {
+            return var_dump($var);
+        } else {
+            return;
+        }
     }
 }

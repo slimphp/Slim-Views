@@ -47,6 +47,7 @@ class TwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('urlFor', array($this, 'urlFor')),
             new \Twig_SimpleFunction('baseUrl', array($this, 'base')),
             new \Twig_SimpleFunction('siteUrl', array($this, 'site')),
+            new \Twig_SimpleFunction('dump', array($this, 'dump')),
         );
     }
 
@@ -69,5 +70,14 @@ class TwigExtension extends \Twig_Extension
             $uri .= $req->getRootUri();
         }
         return $uri;
+    }
+    
+    public function dump($var, $appName = 'default')
+    {
+        if (Slim::getInstance($appName)->view()->parserOptions['debug']) {
+            return var_dump($var);
+        } else {
+            return;
+        }
     }
 }

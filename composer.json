@@ -21,6 +21,10 @@
         "slim/slim": ">=2.3.0",
         "php": ">=5.3.0"
     },
+    "suggest": {
+        "smarty/smarty": "Smarty templating system",
+        "twig/twig": "Twig templating system"
+    },
     "autoload": {
         "psr-0": {
             "Slim\\Views": ""

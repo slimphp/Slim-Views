@@ -85,7 +85,7 @@ class Twig extends \Slim\View
         $env = $this->getInstance();
         $parser = $env->loadTemplate($template);
 
-        return $parser->render($this->all());
+        return $parser->render($this->all(), $data);
     }
 
     /**

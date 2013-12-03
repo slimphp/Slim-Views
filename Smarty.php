@@ -81,7 +81,7 @@ class Smarty extends \Slim\View
      * @param    string $template The path to the template, relative to the  templates directory.
      * @return   void
      */
-    public function render($template)
+    public function render($template, $data = null)
     {
         $parser = $this->getInstance();
         $parser->assign($this->all());

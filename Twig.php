@@ -80,12 +80,12 @@ class Twig extends \Slim\View
      * @param   string $template The path to the Twig template, relative to the Twig templates directory.
      * @return  void
      */
-    public function render($template)
+    public function render($template, $data = null)
     {
         $env = $this->getInstance();
         $parser = $env->loadTemplate($template);
 
-        return $parser->render($this->all());
+        return $parser->render($this->all(), $data);
     }
 
     /**

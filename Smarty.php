@@ -79,6 +79,7 @@ class Smarty extends \Slim\View
      * This method will output the rendered template content
      *
      * @param    string $template The path to the template, relative to the  templates directory.
+     * @param null $data
      * @return   void
      */
     public function render($template, $data = null)

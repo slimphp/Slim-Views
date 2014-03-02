@@ -83,10 +83,11 @@ class Twig extends \Slim\View
      */
     public function render($template, $data = null)
     {
+		$this->appendDate((array)$data);
         $env = $this->getInstance();
         $parser = $env->loadTemplate($template);
 
-        return $parser->render($this->all(), $data);
+        return $parser->render($this->all());
     }
 
     /**

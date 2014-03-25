@@ -19,10 +19,21 @@ function smarty_function_urlFor($params, $template)
 
 	if (isset($params['options']))
 	{
-		$options = explode('|', $params['options']);
-		foreach ($options as $option) {
-			list($key, $value) = explode('.', $option);
-			$opts[$key] = $value;
+		switch (gettype($params['options'])) {
+			case 'array':
+				$opts = $params['options'];
+				break;
+
+			case 'string':
+				$options = explode('|', $params['options']);
+				foreach ($options as $option) {
+					list($key, $value) = explode('.', $option);
+					$opts[$key] = $value;
+				}
+				break;
+
+			default:
+				throw new \Exception('Options parameter is of unknown type, provide either string or array');
 		}
 
 		$url = \Slim\Slim::getInstance($appName)->urlFor($name, $opts);

@@ -123,7 +123,11 @@ Inside your Smarty template you would write:
 
     {urlFor name="hello" options="name.Josh|age.26"}
 
-You can easily pass variables that are arrays using the (.) or object using the (->) by doing:
+or with the new array syntax:
+
+    {urlFor name="hello" options=["name" => "Josh", "age" => "26"]}
+
+You can easily pass variables that are arrays as normal or using the (.):
 
     <a href="{urlFor name="hello" options="name.{$person.name}|age.{$person.age}"}">Hello {$name}</a>
 

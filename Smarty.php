@@ -67,6 +67,11 @@ class Smarty extends \Slim\View
      * @var SmartyExtensions The Smarty extensions directory you want to load plugins from
      */
     public $parserExtensions = array();
+    
+    /**
+     * @var mixed A valid Smarty template directory definition.
+     */
+    public $smartyTemplatesDirectory = 'templates';
 
     /**
      * @var parserInstance persistent instance of the Parser object.
@@ -107,7 +112,7 @@ class Smarty extends \Slim\View
             }
 
             $this->parserInstance = new \Smarty();
-            $this->parserInstance->template_dir = $this->getTemplatesDirectory();
+            $this->parserInstance->template_dir = is_null($this->smartyTemplatesDirectory) ? $this->getTemplatesDirectory() : $this->smartyTemplatesDirectory;
             if ($this->parserExtensions) {
                 $this->parserInstance->addPluginsDir($this->parserExtensions);
             }

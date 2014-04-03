@@ -79,7 +79,7 @@ class Twig extends \Slim\View
      *
      * @param   string $template The path to the Twig template, relative to the Twig templates directory.
      * @param null $data
-     * @return  void
+     * @return  string
      */
     public function render($template, $data = null)
     {

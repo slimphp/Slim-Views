@@ -74,6 +74,22 @@ class Smarty extends \Slim\View
     private $parserInstance = null;
 
     /**
+     * Set the base directory that contains view templates
+     * @param   string|array $directory
+     * @throws  \InvalidArgumentException If directory is not a directory
+     */
+    public function setTemplatesDirectory($directory)
+    {
+        if (is_array($directory)) {
+            $this->templatesDirectory = array_map(function($element) {
+                return rtrim($element, DIRECTORY_SEPARATOR);
+            }, $directory);
+        } else {
+            $this->templatesDirectory = rtrim($directory, DIRECTORY_SEPARATOR);
+        }
+    }
+
+    /**
      * Render Template
      *
      * This method will output the rendered template content

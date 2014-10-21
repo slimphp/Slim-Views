@@ -88,12 +88,6 @@ $app = new \Slim\Slim(array(
 ));
 ```
 
-To use Plates options do the following: 
-
-```php
-
-```
-
 In addition to all of this we also have a few helper functions which are included for both view parsers.
 In order to start using these you can add them to their respective view parser as stated below:
 

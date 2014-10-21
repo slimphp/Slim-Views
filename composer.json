@@ -23,7 +23,8 @@
     },
     "suggest": {
         "smarty/smarty": "Smarty templating system",
-        "twig/twig": "Twig templating system"
+        "twig/twig": "Twig templating system",
+        "league/plates": "Plates templating system"
     },
     "autoload": {
         "psr-0": {

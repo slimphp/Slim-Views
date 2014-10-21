@@ -75,6 +75,19 @@ $view->parserOptions = array(
 );
 ```
 
+## Plates
+
+### How to use
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$app = new \Slim\Slim(array(
+    'view' => new \Slim\Views\Plates()
+));
+```
+
 In addition to all of this we also have a few helper functions which are included for both view parsers.
 In order to start using these you can add them to their respective view parser as stated below:
 
@@ -91,6 +104,14 @@ $view->parserExtensions = array(
 ```php
 $view->parserExtensions = array(
     dirname(__FILE__) . '/vendor/slim/views/Slim/Views/SmartyPlugins',
+);
+```
+
+#### Plates
+
+```php
+$view->parserExtensions = array(
+    new Slim\Views\PlatesExtension()
 );
 ```
 
@@ -135,6 +156,21 @@ If you need to specify the appname for the getInstance method in the urlFor func
 
     <a href="{urlFor name="hello" appname="admin" options="name.{$person.name}|age.{$person.age}"}">Hello {$name}</a>
 
+__Plates__
+
+Inside your Plates template you would write:
+
+    <?= $this->urlFor('hello', array('name': 'Josh', 'age': '19')); ?>
+
+You can easily pass variables that are objects or arrays by doing:
+
+    <a href="<?= $this->urlFor('hello', array('name': $person->name, 'age': $person->age)) ?>">Hello <?= $name; ?></a>
+
+If you need to specify the appname for the getInstance method in the urlFor functions, set it as the third parameter of the function
+in your template:
+
+    <a href="<?= $this->urlFor('hello', array('name': $person->name, 'age': $person->age), 'admin') ?>">Hello <?= $name; ?></a>
+
 #### siteUrl
 
 __Twig__
@@ -149,6 +185,11 @@ Inside your Smarty template you would write:
 
     {siteUrl url='/about/me'}
 
+__Plates__
+
+Inside your Plates template you would write:
+
+    <?= $this->siteUrl('/about/me'); ?>
 
 #### baseUrl
 
@@ -163,6 +204,12 @@ __Smarty__
 Inside your Smarty template you would write:
 
     {baseUrl}
+
+__Plates__
+
+Inside your Plates template you would write:
+
+    <?= $this->baseUrl(); ?>
 
 ## Authors
 

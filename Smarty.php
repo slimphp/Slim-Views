@@ -69,6 +69,11 @@ class Smarty extends \Slim\View
     public $parserExtensions = array();
 
     /**
+     * @var Smarty class name
+     */
+    public $parserClassName = '\Smarty';
+
+    /**
      * @var parserInstance persistent instance of the Parser object.
      */
     private $parserInstance = null;
@@ -98,15 +103,15 @@ class Smarty extends \Slim\View
      */
     public function getInstance()
     {
-        if (!($this->parserInstance instanceof \Smarty)) {
-            if (!class_exists('\Smarty')) {
+        if (! ($this->parserInstance instanceof $this->parserClassName)) {
+            if (!class_exists($this->parserClassName)) {
                 if (!is_dir($this->parserDirectory)) {
                     throw new \RuntimeException('Cannot set the Smarty lib directory : ' . $this->parserDirectory . '. Directory does not exist.');
                 }
-                require_once $this->parserDirectory . '/Smarty.class.php';
+                require_once $this->parserDirectory . '/' . $this->parserClassName . '.class.php';
             }
 
-            $this->parserInstance = new \Smarty();
+            $this->parserInstance = new $this->parserClassName();
             $this->parserInstance->template_dir = $this->getTemplatesDirectory();
             if ($this->parserExtensions) {
                 $this->parserInstance->addPluginsDir($this->parserExtensions);

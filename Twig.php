@@ -6,7 +6,7 @@
  * @author      Andrew Smith
  * @link        http://www.slimframework.com
  * @copyright   2013 Josh Lockhart
- * @version     0.1.2
+ * @version     0.1.3
  * @package     SlimViews
  *
  * MIT LICENSE

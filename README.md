@@ -14,20 +14,10 @@ Slim Views only officially support the following views listed below.
 
 #### using [Composer](http://getcomposer.org/)
 
-Create a composer.json file in your project root:
-    
-```json
-{
-    "require": {
-        "slim/views": "0.1.*"
-    }
-}
-```
-
-Then run the following composer command:
+Install in your project by running the following composer command:
 
 ```bash
-$ php composer.phar install
+$ php composer require slim/views
 ```
 
 ## Smarty

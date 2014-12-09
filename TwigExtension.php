@@ -6,7 +6,7 @@
  * @author      Andrew Smith
  * @link        http://www.slimframework.com
  * @copyright   2013 Josh Lockhart
- * @version     0.1.2
+ * @version     0.1.3
  * @package     SlimViews
  *
  * MIT LICENSE
@@ -47,6 +47,7 @@ class TwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('urlFor', array($this, 'urlFor')),
             new \Twig_SimpleFunction('baseUrl', array($this, 'base')),
             new \Twig_SimpleFunction('siteUrl', array($this, 'site')),
+            new \Twig_SimpleFunction('currentUrl', array($this, 'currentUrl')),
         );
     }
 
@@ -68,6 +69,23 @@ class TwigExtension extends \Twig_Extension
         if ($withUri) {
             $uri .= $req->getRootUri();
         }
+        return $uri;
+    }
+
+    public function currentUrl($withQueryString = true, $appName = 'default')
+    {
+        $app = Slim::getInstance($appName);
+        $req = $app->request();
+        $uri = $req->getUrl() . $req->getPath();
+
+        if ($withQueryString) {
+            $env = $app->environment();
+
+            if ($env['QUERY_STRING']) {
+                $uri .= '?' . $env['QUERY_STRING'];
+            }
+        }
+
         return $uri;
     }
 }

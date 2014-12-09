@@ -6,7 +6,7 @@
  * @author      Andrew Smith
  * @link        http://www.slimframework.com
  * @copyright   2013 Josh Lockhart
- * @version     0.1.2
+ * @version     0.1.3
  * @package     SlimViews
  *
  * MIT LICENSE
@@ -98,7 +98,7 @@ class Smarty extends \Slim\View
      */
     public function getInstance()
     {
-        if (! ($this->parserInstance instanceof \Smarty)) {
+        if (!($this->parserInstance instanceof \Smarty)) {
             if (!class_exists('\Smarty')) {
                 if (!is_dir($this->parserDirectory)) {
                     throw new \RuntimeException('Cannot set the Smarty lib directory : ' . $this->parserDirectory . '. Directory does not exist.');
@@ -112,10 +112,10 @@ class Smarty extends \Slim\View
                 $this->parserInstance->addPluginsDir($this->parserExtensions);
             }
             if ($this->parserCompileDirectory) {
-                $this->parserInstance->compile_dir  = $this->parserCompileDirectory;
+                $this->parserInstance->compile_dir = $this->parserCompileDirectory;
             }
             if ($this->parserCacheDirectory) {
-                $this->parserInstance->cache_dir  = $this->parserCacheDirectory;
+                $this->parserInstance->cache_dir = $this->parserCacheDirectory;
             }
         }
 

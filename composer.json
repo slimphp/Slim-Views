@@ -26,9 +26,8 @@
         "twig/twig": "Twig templating system"
     },
     "autoload": {
-        "psr-0": {
-            "Slim\\Views": ""
+        "psr-4": {
+            "Slim\\Views\\": "./"
         }
-    },
-    "target-dir": "Slim/Views"
+    }
 }

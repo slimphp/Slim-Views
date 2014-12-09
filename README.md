@@ -89,6 +89,7 @@ These helpers are listed below.
 - urlFor
 - siteUrl
 - baseUrl
+- currentUrl
 
 #### urlFor
 
@@ -153,6 +154,21 @@ __Smarty__
 Inside your Smarty template you would write:
 
     {baseUrl}
+
+
+#### currentUrl
+
+__Twig__
+
+Inside your Twig template you would write:
+
+    {{ currentUrl() }}
+
+__Smarty__
+
+Inside your Smarty template you would write:
+
+    {currentUrl}
 
 ## Authors
 

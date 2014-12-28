@@ -5,7 +5,7 @@ You can use any of these custom View classes by either requiring the appropriate
 Slim Framework bootstrap file and initialize your Slim application using an instance of 
 the selected View class or using Composer (the recommended way).
 
-Slim Views only officially support the following views listed below.
+Slim Views only officially supports the following views listed below.
 
 - Smarty
 - Twig

@@ -69,6 +69,11 @@ class Smarty extends \Slim\View
     public $parserExtensions = array();
 
     /**
+     * @var SmartyConfigs The Smarty configs directory you want to load configs from
+     */
+    public $parserConfigs = array();
+
+    /**
      * @var parserInstance persistent instance of the Parser object.
      */
     private $parserInstance = null;
@@ -110,6 +115,9 @@ class Smarty extends \Slim\View
             $this->parserInstance->template_dir = $this->getTemplatesDirectory();
             if ($this->parserExtensions) {
                 $this->parserInstance->addPluginsDir($this->parserExtensions);
+            }
+            if ($this->parserConfigs) {
+                $this->parserInstance->addConfigDir($this->parserConfigs);
             }
             if ($this->parserCompileDirectory) {
                 $this->parserInstance->compile_dir = $this->parserCompileDirectory;

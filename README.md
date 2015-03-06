@@ -80,7 +80,7 @@ $view->parserExtensions = array(
 
 ```php
 $view->parserExtensions = array(
-    dirname(__FILE__) . '/vendor/slim/views/Slim/Views/SmartyPlugins',
+    dirname(__FILE__) . '/vendor/slim/views/SmartyPlugins',
 );
 ```
 

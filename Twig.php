@@ -132,6 +132,20 @@ class Twig extends \Slim\View
 
         return $this->parserInstance;
     }
+    
+    /**
+     * Sets the TwigEnvironment to a new value. Useful for building your own
+     * instance of TwigEnvironment or for wrapping an existing instance with
+     * a decorator.
+     * 
+     * @return self
+     */
+    public function setInstance(\Twig_Environment $environment)
+    {
+        $this->parserInstance = $environment;
+        
+        return $this;
+    }
 
     /**
      * DEPRECATION WARNING! This method will be removed in the next major point release

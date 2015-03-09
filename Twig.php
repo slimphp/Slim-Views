@@ -70,7 +70,7 @@ class Twig extends \Slim\View
     /**
      * @var TwigEnvironment The Twig environment for rendering templates.
      */
-    private $parserInstance = null;
+    protected $parserInstance = null;
 
     /**
      * Render Twig Template

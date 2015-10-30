@@ -20,7 +20,7 @@ function smarty_function_siteUrl($params, $template)
     $uri = $req->getUrl();
 
     if ($withUri) {
-        $uri .= $req->getRootUri();
+        $uri .= $req->getScriptName();
     }
 
     return $uri . '/' . ltrim($url, '/');

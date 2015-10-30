@@ -67,7 +67,7 @@ class TwigExtension extends \Twig_Extension
         $uri = $req->getUrl();
 
         if ($withUri) {
-            $uri .= $req->getRootUri();
+            $uri .= $req->getScriptName();
         }
         return $uri;
     }

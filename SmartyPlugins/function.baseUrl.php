@@ -19,7 +19,7 @@ function smarty_function_baseUrl($params, $template)
     $uri = $req->getUrl();
 
     if ($withUri) {
-        $uri .= $req->getRootUri();
+        $uri .= $req->getScriptName();
     }
 
     return $uri;

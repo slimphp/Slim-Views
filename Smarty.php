@@ -107,15 +107,15 @@ class Smarty extends \Slim\View
             }
 
             $this->parserInstance = new \Smarty();
-            $this->parserInstance->template_dir = $this->getTemplatesDirectory();
+            $this->parserInstance->setTemplateDir($this->getTemplatesDirectory());
             if ($this->parserExtensions) {
                 $this->parserInstance->addPluginsDir($this->parserExtensions);
             }
             if ($this->parserCompileDirectory) {
-                $this->parserInstance->compile_dir = $this->parserCompileDirectory;
+                $this->parserInstance->setCompileDir($this->parserCompileDirectory);
             }
             if ($this->parserCacheDirectory) {
-                $this->parserInstance->cache_dir = $this->parserCacheDirectory;
+                $this->parserInstance->setCacheDir($this->parserCacheDirectory);
             }
         }
 
